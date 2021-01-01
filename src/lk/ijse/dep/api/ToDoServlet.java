@@ -18,5 +18,6 @@ public class ToDoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
          BasicDataSource cp = (BasicDataSource) getServletContext().getAttribute("cp");
          response.setContentType("application/json");
+
     }
 }
