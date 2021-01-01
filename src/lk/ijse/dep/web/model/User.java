@@ -1,4 +1,4 @@
-package lk.ijse.dep.model;
+package lk.ijse.dep.web.model;
 
 public class User {
     private String userName;

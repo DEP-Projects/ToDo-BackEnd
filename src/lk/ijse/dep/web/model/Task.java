@@ -1,8 +1,10 @@
-package lk.ijse.dep.model;
+package lk.ijse.dep.web.model;
 
-import lk.ijse.dep.util.Priority;
+import lk.ijse.dep.web.util.Priority;
 
 public class Task {
+
+    private int taskId;
     private String userName;
     private String taskName;
     private String description;
@@ -12,11 +14,12 @@ public class Task {
     public Task() {
     }
 
-    public Task(String userName, String taskName, String description, lk.ijse.dep.util.Priority priority, Boolean completed) {
+    public Task(int taskId, String userName, String taskName, String description, String priority, Boolean completed) {
+        this.taskId = taskId;
         this.userName = userName;
         this.taskName = taskName;
         this.description = description;
-        Priority = priority;
+        Priority =Priority.valueOf(priority);
         this.completed = completed;
     }
 
@@ -44,11 +47,11 @@ public class Task {
         this.description = description;
     }
 
-    public lk.ijse.dep.util.Priority getPriority() {
+    public lk.ijse.dep.web.util.Priority getPriority() {
         return Priority;
     }
 
-    public void setPriority(lk.ijse.dep.util.Priority priority) {
+    public void setPriority(Priority priority) {
         Priority = priority;
     }
 
@@ -60,14 +63,23 @@ public class Task {
         this.completed = completed;
     }
 
+    public int getTaskId() {
+        return taskId;
+    }
+
+    public void setTaskId(int taskId) {
+        this.taskId = taskId;
+    }
     @Override
     public String toString() {
         return "Task{" +
-                "username='" + userName + '\'' +
+                "taskId=" + taskId +
+                ", userName='" + userName + '\'' +
                 ", taskName='" + taskName + '\'' +
                 ", description='" + description + '\'' +
                 ", Priority=" + Priority +
                 ", completed=" + completed +
                 '}';
     }
+
 }
