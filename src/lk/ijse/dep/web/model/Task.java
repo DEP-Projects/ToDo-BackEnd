@@ -47,7 +47,7 @@ public class Task {
         this.description = description;
     }
 
-    public lk.ijse.dep.web.util.Priority getPriority() {
+    public Priority getPriority() {
         return Priority;
     }
 

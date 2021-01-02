@@ -15,7 +15,7 @@ public class CorsFilter extends HttpFilter {
     public void doFilter(HttpServletRequest req, HttpServletResponse resp, FilterChain chain) throws ServletException, IOException {
         resp.addHeader("Access-Control-Allow-Origin", "http://localhost:3000");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type");
-        resp.addHeader("Access-Control-Allow-Methods", "GET");
+        resp.addHeader("Access-Control-Allow-Methods", "GET, POST, DELETE");
         chain.doFilter(req,resp);
     }
 
